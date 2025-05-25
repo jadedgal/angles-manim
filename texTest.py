@@ -1,0 +1,21 @@
+from manim import *
+class TexTest(Scene):
+    def construct(self):
+        t1 = MathTex("Circumference =", " \\pi", "\\times", " d").scale(0.7)
+        t2 = MathTex("Circumference =", " \\pi", " \\times", " 2r").scale(0.7)
+        backupt2 = MathTex("d = 2r").scale(0.7).next_to(t2,UP)
+        t3 = MathTex("Circumference =", " 2\\pi", " \\times", " r").scale(0.7)
+        t4 = MathTex("Circumference = ", "2\\pi", " \\times", " 1").scale(0.7)
+        t5 = MathTex("Circumference = ", "2\\pi").scale(0.7)
+        self.play(Write(t1))
+        self.wait()
+        self.play(Write(backupt2))
+        self.play(TransformMatchingTex(t1, t2))
+        self.wait()
+        self.play(Unwrite(backupt2), run_time = 0.5)
+        self.play(TransformMatchingTex(t2, t3))
+        self.wait()
+        self.play(TransformMatchingTex(t3, t4))
+        self.wait()
+        self.play(TransformMatchingTex(t4, t5))
+        self.wait()
