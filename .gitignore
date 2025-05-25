@@ -1,2 +1,3 @@
-/media
+/media/*/**
+!/media/videos/main/480p15/scenify.mp4
 /__pycache__
